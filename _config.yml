@@ -1,16 +1,16 @@
 # 网站信息
-title:              "小李的杂货铺"
-description:        "大概会用来放一些奇奇怪怪的东西吧"
+title:              "吕吕吕"
+description:        "android"
 
 # 作者信息
-author_name:        "李明亮"
-author_email:       matthewlee0725@gmail.com
-twitter_username:   mth_li
+author_name:        "lvliheng"
+author_email:       lvliheng@gmail.com
+twitter_username:   lvliheng
 
 # 网站设置
 baseurl:            ""
 permalink:          /:title
-timezone:           Asia/Shanghai
+timezone:           Asia/Beijing
 encoding:           UTF-8  
 
 # 网站生成
