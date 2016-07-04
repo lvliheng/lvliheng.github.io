@@ -115,5 +115,3 @@ title: 关于Android M 权限
   {% endhighlight %}
   
   That's all.
-  
-  :blush:
