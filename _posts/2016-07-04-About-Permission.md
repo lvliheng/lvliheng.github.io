@@ -3,23 +3,23 @@ title: 关于Android M 权限
 ---
 
   
-  ```java 
+  {% highlight java %}
   Note: Beginning with Android 6.0 (API level 23), users can revoke permissions from any app at any time, even if the app targets a lower API level. You should test your app to verify that it behaves properly when it's missing a needed permission, regardless of what API level your app targets.
-  ```
+  {% endhighlight %}
   
   从Android 6.0开始，系统可以管理应用的权限了。
   
   （用到某个权限的时候再去请求，随时关闭应用的某个权限，嗯，这样才更合理嘛！）
   
   具体流程：
-  
+
   1. 检查权限；
   2. 请求权限；
   3. 重写回调。
   
   官方文档的方法：
 
-  ```java
+  {% highlight java %}
   // Here, thisActivity is the current activity
   if (ContextCompat.checkSelfPermission(thisActivity,
                   Manifest.permission.READ_CONTACTS)
@@ -46,21 +46,21 @@ title: 关于Android M 权限
           // result of the request.
       }
   }
-  ```
+  {% endhighlight %}
 
-  第一个条件：检查应用是否有读取通讯录的权限，如果返回的结果不是“PackageManager.PERMISSION_GRANTED”进行下一步，
+  第一个条件：检查应用是否有读取通讯录的权限，如果返回的结果是“拒绝”进行下一步，
   
-  ```java 
+  {% highlight java %}
   if(ContextCompat.checkSelfPermission(thisActivity,
                   Manifest.permission.READ_CONTACTS)
           != PackageManager.PERMISSION_GRANTED){
       //用户拒绝了
   }
-  ```
+  {% endhighlight %}
   
   第二个条件：如果第一次用户拒绝了，再次检查时弹出的对话框多了一个选项“不再询问”。
   
-  ```java
+  {% highlight java %}
   if (ActivityCompat.shouldShowRequestPermissionRationale(thisActivity,
               Manifest.permission.READ_CONTACTS)) {
       //勾选“不再询问”再次拒绝
@@ -72,11 +72,11 @@ title: 关于Android M 权限
                     new String[]{Manifest.permission.READ_CONTACTS},
                     MY_PERMISSIONS_REQUEST_READ_CONTACTS);
   ｝
-  ```
+  {% endhighlight %}
   
   然后，处理请求结果。
   
-  ```java
+  {% highlight java %}
   @Override
   public void onRequestPermissionsResult(int requestCode,
           String permissions[], int[] grantResults) {
@@ -101,18 +101,18 @@ title: 关于Android M 权限
           // permissions this app might request
       }
   }
-  ```
+  {% endhighlight %}
   
   最后，如果用户之前勾选了“不再提示”并拒绝了权限，现在又想使用某个需要权限的功能时，可以打开应用对应的系统设置页。
   
-  ```java
+  {% highlight java %}
   private void goToSettings() {
       Intent myAppSettings = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + getPackageName()));
       myAppSettings.addCategory(Intent.CATEGORY_DEFAULT);
       myAppSettings.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
       startActivityForResult(myAppSettings, REQUEST_APP_SETTINGS);
   }
-  ```
+  {% endhighlight %}
   
   That's all.
   
