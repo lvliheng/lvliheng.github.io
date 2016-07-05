@@ -3,9 +3,9 @@ title: 关于Android M 权限
 ---
 
   
-  {% highlight java %}
-  Note: Beginning with Android 6.0 (API level 23), users can revoke permissions from any app at any time, even if the app targets a lower API level. You should test your app to verify that it behaves properly when it's missing a needed permission, regardless of what API level your app targets.
-  {% endhighlight %}
+  > Note: Beginning with Android 6.0 (API level 23), users can revoke permissions from any app at any time, even if the app targets a 
+  > lower API level. You should test your app to verify that it behaves properly when it's missing a needed permission, regardless of 
+  > what API level your app targets.
   
   从Android 6.0开始，系统可以管理应用的权限了。
   
@@ -13,9 +13,9 @@ title: 关于Android M 权限
   
   具体流程：
 
-  1. 检查权限；
-  2. 请求权限；
-  3. 重写回调。
+  * 检查权限；
+  * 请求权限；
+  * 重写回调。
   
   官方文档的方法：
 
