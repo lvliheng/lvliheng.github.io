@@ -231,7 +231,7 @@ iframe {
   width: 100%; }
 
 article {
-  max-width: 800px;
+  max-width: 500px;
   margin: 0 auto; }
   article .title {
     line-height: 1.4em;
@@ -276,7 +276,7 @@ article {
       color: #000000; }
 
 section {
-  max-width: 800px;
+  max-width: 500px;
   margin: 0 auto; }
   section ul {
     list-style: none;
