@@ -66,7 +66,7 @@ title: 关于Android M 权限
       //勾选“不再询问”再次拒绝
       //这里可以打开系统设置页提示用户添加我们需要的权限
   ｝else ｛
-      //用户没有选择“再次询问”，则再次请求权限
+      //用户在没有勾选“不再询问”的情况下拒绝了，则再次请求权限
       //最后一个参数是request code，一个页面需要请求多个权限时以便区分
       ActivityCompat.requestPermissions(thisActivity,
                     new String[]{Manifest.permission.READ_CONTACTS},
