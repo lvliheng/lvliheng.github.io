@@ -107,9 +107,13 @@ title: 关于Android M 权限
   
   {% highlight java %}
   private void goToSettings() {
-      Intent myAppSettings = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + getPackageName()));
+      Intent myAppSettings = new Intent();
+      myAppSettings.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
       myAppSettings.addCategory(Intent.CATEGORY_DEFAULT);
-      myAppSettings.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+      myAppSettings.setData(Uri.parse("package:" + getPackageName()));
+      myAppSettings.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+      myAppSettings.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+      myAppSettings.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
       startActivityForResult(myAppSettings, REQUEST_APP_SETTINGS);
   }
   {% endhighlight %}
