@@ -1,5 +1,5 @@
 ---
-RecyclerView 重排序后列表位置问题
+title: RecyclerView 重排序后列表位置问题
 ---
 
 RecyclerView自带的动画效果真的很不错
