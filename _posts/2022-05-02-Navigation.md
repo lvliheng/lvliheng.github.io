@@ -4,39 +4,42 @@ title: Navigation按模块分包
 
 想按模块分一下包
 
-nav_graph.xml
+>nav_graph.xml
+```java
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/home">
 
-><navigation
->    xmlns:android="http://schemas.android.com/apk/res/android"
->    xmlns:app="http://schemas.android.com/apk/res-auto"
->    android:id="@+id/nav_graph"
->    app:startDestination="@+id/home">
->
->    <include app:graph="@navigation/home"/>
->    <include app:graph="@navigation/list"/>
->    <include app:graph="@navigation/form"/>
->
-></navigation>
+    <include app:graph="@navigation/home"/>
+    <include app:graph="@navigation/list"/>
+    <include app:graph="@navigation/form"/>
 
-home.xml
+</navigation>
+```
 
-><navigation
->   xmlns:android="http://schemas.android.com/apk/res/android"
->   xmlns:app="http://schemas.android.com/apk/res-auto"
->   xmlns:tools="http://schemas.android.com/tools"
->   android:id="@+id/home"
->   app:startDestination="@+id/titleScreen">
+>home.xml
 
->   <fragment
->       android:id="@+id/titleScreen"
->       android:name="com.example.android.navigationadvancedsample.homescreen.Title"
->       android:label="@string/title_home"
->       tools:layout="@layout/fragment_title">
->       <action
->           android:id="@+id/action_title_to_about"
->           app:destination="@id/aboutScreen"/>
->   </fragment>
-></navigation>
+```java
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    app:startDestination="@+id/titleScreen">
+
+    <fragment
+        android:id="@+id/titleScreen"
+        android:name="com.example.android.navigationadvancedsample.homescreen.Title"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_title">
+        <action
+            android:id="@+id/action_title_to_about"
+            app:destination="@id/aboutScreen"/>
+    </fragment>
+</navigation>
+```
 
 其他两个也一样
 
