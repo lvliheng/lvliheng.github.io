@@ -1,11 +1,10 @@
 ---
-title: Navigation
+title: Navigation按模块分包
 ---
 
 想按模块分一下包
 
 nav_graph.xml
-
 
 ><navigation
 >    xmlns:android="http://schemas.android.com/apk/res/android"
