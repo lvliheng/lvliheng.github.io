@@ -42,8 +42,8 @@ title: Navigation 按模块分包
 </navigation>
 ```
 
-其他两个也一样
+其他两个也一样  
 
-但是，如果‘home’和‘list’的页面有交叉的就不行了
-只能跳转到对应inclue的xml的入口
+但是，如果‘home’和‘list’的页面有交叉的就不行了  
+只能跳转到对应inclue的xml的入口  
 。。。
