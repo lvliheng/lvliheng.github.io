@@ -17,7 +17,6 @@ homeItemView.addView(homeCustomView)
 ```
 
 跳转二级页面时隐藏
-
 ```java
 navController.addOnDestinationChangedListener { _, destination, _ ->
     when (destination.id) {
