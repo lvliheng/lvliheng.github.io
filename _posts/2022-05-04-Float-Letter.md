@@ -55,7 +55,4 @@ private AbsListView.OnScrollListener scrollListener = new AbsListView.OnScrollLi
         }
     };
 ```
-    
-古代人的智慧  
-佩服啊  
-。。。
+
